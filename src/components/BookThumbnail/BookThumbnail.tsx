@@ -1,22 +1,20 @@
-import { useState } from "react";
 import { BookImage, ImageContainer, NoImageBox } from "./BookThumbnail.styled";
 import { Props } from "./BookThumbnail.type";
+import useImageFallback from "./hooks/useImageFallback";
 
 const BookThumbnail = ({ title, thumbnail }: Props) => {
-  const [imageError, setImageError] = useState(false);
+  const { handleOnError, hasNoImage } = useImageFallback(thumbnail);
 
-  return thumbnail === undefined || imageError ? (
+  return hasNoImage() ? (
     <NoImageBox>No Image</NoImageBox>
   ) : (
     <ImageContainer>
       <BookImage
-        src={thumbnail}
+        src={thumbnail!}
         alt={title}
         fill={true}
         sizes="110px"
-        onError={() => {
-          setImageError(true);
-        }}
+        onError={handleOnError}
       />
     </ImageContainer>
   );
