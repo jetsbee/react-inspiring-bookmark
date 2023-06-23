@@ -3,6 +3,11 @@ import getQueryClient from "@/utils/getQueryClient";
 import { BESTSELLER_BOOKS_QK } from "@/utils/queryKeys";
 import { useQuery } from "@tanstack/react-query";
 
+interface ImageLinks {
+  smallThumbnail: string;
+  thumbnail: string;
+}
+
 interface Book {
   isbn: string;
   title: string;
@@ -10,6 +15,7 @@ interface Book {
   publishedDate: string;
   description: string;
   language: string;
+  imageLinks?: ImageLinks;
 }
 
 const prefetchBestsellerBooksQuery = async () => {
