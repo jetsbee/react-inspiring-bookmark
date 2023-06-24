@@ -1,3 +1,4 @@
+import { dateFormat } from "@/utils/dateFormat";
 import BookDescription from "../BookDescription/BookDescription";
 import BookThumbnail from "../BookThumbnail/BookThumbnail";
 import { StyledLi, StyledUl } from "./BookListView.styled";
@@ -18,7 +19,10 @@ const BookListView = ({ books }: Props) => {
               <BookThumbnail {...bookThumbnailProps} />
               <h2>{title}</h2>
               <p>by {authors.join(", ")}</p>
-              <p>{publishedDate}</p>
+              <p>
+                published {dateFormat(publishedDate).length === 4 ? "in" : "on"}{" "}
+                {dateFormat(publishedDate)}
+              </p>
               <BookDescription>{description}</BookDescription>
             </StyledLi>
           );
