@@ -11,7 +11,6 @@ export const StarFilled = styled.div`
   width: 2.4rem;
   height: 2.4rem;
   margin-right: 0.8rem;
-  cursor: pointer;
 `;
 
 export const StarLine = styled.div`
@@ -23,5 +22,4 @@ export const StarLine = styled.div`
   width: 2.4rem;
   height: 2.4rem;
   margin-right: 0.8rem;
-  cursor: pointer;
 `;
