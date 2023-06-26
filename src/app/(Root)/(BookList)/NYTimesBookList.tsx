@@ -14,7 +14,7 @@ const BookList = () => {
   return (
     <>
       <StyledH2>The New York Times Best Sellers</StyledH2>
-      <BookListView {...props} />;
+      <BookListView {...props} />
     </>
   );
 };
