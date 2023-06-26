@@ -4,7 +4,7 @@ import BookListView from "@/components/BookListView/BookListView";
 import { useBestsellerBooksQuery } from "@/state/bestsellerBooks";
 import { StyledH2 } from "./NYTimesBookList.styled";
 
-const BookList = () => {
+const NYTimesBookList = () => {
   const { data } = useBestsellerBooksQuery();
 
   const props = {
@@ -19,4 +19,4 @@ const BookList = () => {
   );
 };
 
-export default BookList;
+export default NYTimesBookList;
