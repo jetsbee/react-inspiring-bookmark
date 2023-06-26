@@ -13,7 +13,7 @@ const BookThumbnail = ({ title, thumbnail }: Props) => {
         src={thumbnail!}
         alt={title}
         fill={true}
-        sizes="110px"
+        sizes="108px"
         onError={handleOnError}
       />
     </ImageContainer>

@@ -1,7 +1,14 @@
 import { dateFormat } from "@/utils/dateFormat";
 import BookDescription from "../BookDescription/BookDescription";
 import BookThumbnail from "../BookThumbnail/BookThumbnail";
-import { StyledLi, StyledUl } from "./BookListView.styled";
+import {
+  RowDiv,
+  StyledH2,
+  StyledLi,
+  StyledPForAuthors,
+  StyledPForDate,
+  StyledUl,
+} from "./BookListView.styled";
 import { Props } from "./BookListView.type";
 
 const BookListView = ({ books }: Props) => {
@@ -16,14 +23,19 @@ const BookListView = ({ books }: Props) => {
 
           return (
             <StyledLi key={isbn}>
-              <BookThumbnail {...bookThumbnailProps} />
-              <h2>{title}</h2>
-              <p>by {authors.join(", ")}</p>
-              <p>
-                published {dateFormat(publishedDate).length === 4 ? "in" : "on"}{" "}
-                {dateFormat(publishedDate)}
-              </p>
-              <BookDescription>{description}</BookDescription>
+              <RowDiv>
+                <BookThumbnail {...bookThumbnailProps} />
+              </RowDiv>
+              <RowDiv>
+                <StyledH2>{title}</StyledH2>
+                <StyledPForAuthors>by {authors.join(", ")}</StyledPForAuthors>
+                <StyledPForDate>
+                  published{" "}
+                  {dateFormat(publishedDate).length === 4 ? "in" : "on"}{" "}
+                  {dateFormat(publishedDate)}
+                </StyledPForDate>
+                <BookDescription>{description}</BookDescription>
+              </RowDiv>
             </StyledLi>
           );
         }

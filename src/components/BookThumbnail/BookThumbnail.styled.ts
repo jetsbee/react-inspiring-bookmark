@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export const ImageContainer = styled.div`
   position: relative;
-  height: 11rem;
-  width: 11rem;
+  height: 16.2rem;
+  width: 10.8rem;
 `;
 
 export const BookImage = styled(Image)`
@@ -14,8 +14,8 @@ export const BookImage = styled(Image)`
 `;
 
 export const NoImageBox = styled.div`
-  height: 11rem;
-  width: 11rem;
+  height: 16.2rem;
+  width: 10.8rem;
   border: 1px solid #dadce0;
   color: #70757a;
   display: flex;

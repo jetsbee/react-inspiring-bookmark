@@ -1,3 +1,4 @@
+import { StyledBtn, StyledP } from "./BookDescription.styled";
 import { Props } from "./BookDescription.type";
 import useShowMore from "./hooks/useShowMore";
 
@@ -6,13 +7,13 @@ const BookDescription = ({ children: text }: Props) => {
 
   return (
     <div>
-      <p>
+      <StyledP>
         {showMore ? text : `${text.substring(0, MIN_TEXT_LENGTH_LIMIT)}...`}
-      </p>
+      </StyledP>
       {text.length > MIN_TEXT_LENGTH_LIMIT && (
-        <button onClick={onToggle}>
+        <StyledBtn onClick={onToggle}>
           {showMore ? "Show less" : "Show more"}
-        </button>
+        </StyledBtn>
       )}
     </div>
   );

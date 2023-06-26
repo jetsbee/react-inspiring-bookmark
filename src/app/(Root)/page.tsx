@@ -1,15 +1,16 @@
 import MainHeadingView from "@/components/MainHeadingView/MainHeadingView";
 import BookList from "./BookList";
 import { HydrateBookList } from "@/utils/hydrators";
+import { StyledMain } from "./page.styled";
 
 const Root = () => {
   return (
-    <main>
+    <StyledMain>
       <MainHeadingView>Hello, Inspiring bookmark!</MainHeadingView>
       <HydrateBookList>
         <BookList />
       </HydrateBookList>
-    </main>
+    </StyledMain>
   );
 };
 
