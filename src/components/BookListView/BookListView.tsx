@@ -3,7 +3,7 @@ import BookDescription from "../BookDescription/BookDescription";
 import BookThumbnail from "../BookThumbnail/BookThumbnail";
 import {
   RowDiv,
-  StyledH2,
+  StyledH3,
   StyledLi,
   StyledPForAuthors,
   StyledPForDate,
@@ -27,7 +27,7 @@ const BookListView = ({ books }: Props) => {
                 <BookThumbnail {...bookThumbnailProps} />
               </RowDiv>
               <RowDiv>
-                <StyledH2>{title}</StyledH2>
+                <StyledH3>{title}</StyledH3>
                 <StyledPForAuthors>by {authors.join(", ")}</StyledPForAuthors>
                 <StyledPForDate>
                   published{" "}

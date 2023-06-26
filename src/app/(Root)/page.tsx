@@ -1,5 +1,5 @@
 import MainHeadingView from "@/components/MainHeadingView/MainHeadingView";
-import BookList from "./BookList";
+import NYTimesBookList from "./(BookList)/NYTimesBookList";
 import { HydrateBookList } from "@/utils/hydrators";
 import { StyledMain } from "./page.styled";
 import BookSearchForm from "@/components/BookSearchForm/BookSearchForm";
@@ -10,7 +10,7 @@ const Root = () => {
       <MainHeadingView>Hello, Inspiring bookmark!</MainHeadingView>
       <BookSearchForm />
       <HydrateBookList>
-        <BookList />
+        <NYTimesBookList />
       </HydrateBookList>
     </StyledMain>
   );
