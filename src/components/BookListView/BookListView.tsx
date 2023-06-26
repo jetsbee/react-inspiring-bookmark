@@ -10,6 +10,7 @@ import {
   StyledUl,
 } from "./BookListView.styled";
 import { Props } from "./BookListView.type";
+import BookmarkStar from "../BookmarkStar/BookmarkStar";
 
 const BookListView = ({ books }: Props) => {
   return (
@@ -27,6 +28,7 @@ const BookListView = ({ books }: Props) => {
                 <BookThumbnail {...bookThumbnailProps} />
               </RowDiv>
               <RowDiv>
+                <BookmarkStar isbn={isbn} />
                 <StyledH3>{title}</StyledH3>
                 <StyledPForAuthors>by {authors.join(", ")}</StyledPForAuthors>
                 <StyledPForDate>

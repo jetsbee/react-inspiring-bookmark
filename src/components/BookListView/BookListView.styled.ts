@@ -31,6 +31,7 @@ export const StyledH3 = styled.h3`
   font-size: 2.4rem;
   font-weight: 600;
   margin-bottom: 1.2rem;
+  display: inline-block;
 `;
 
 export const StyledPForAuthors = styled.p`
