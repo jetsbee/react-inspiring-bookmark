@@ -9,9 +9,13 @@ const BookmarkStar = ({ isbn }: Props) => {
   const isClient = useIsClient();
   const { toggleBookmark, isBookmarked } = useBookmark(isbn);
 
+  const props = {
+    filled: isBookmarked,
+  };
+
   return isClient ? (
     <StyledButton onClick={toggleBookmark}>
-      <BookmarkStarView filled={isBookmarked} />
+      <BookmarkStarView {...props} />
     </StyledButton>
   ) : (
     <StarLine />
