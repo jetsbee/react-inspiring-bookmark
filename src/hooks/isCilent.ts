@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 // ref. https://react.dev/reference/react-dom/client/hydrateRoot#handling-different-client-and-server-content

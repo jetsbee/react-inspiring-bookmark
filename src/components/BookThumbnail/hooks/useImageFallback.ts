@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 const useImageFallback = (thumbnail_path?: string) => {
