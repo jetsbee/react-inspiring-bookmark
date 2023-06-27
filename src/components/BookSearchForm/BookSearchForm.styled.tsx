@@ -15,7 +15,7 @@ export const StyledForm = styled.form`
   display: flex;
   max-width: 76.8rem;
   min-width: 48rem;
-  margin-bottom: 3.2rem;
+  margin-bottom: 4.8rem;
 `;
 
 export const StyledTextInput = styled(TextInput)`

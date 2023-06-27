@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
   min-width: 48rem;
   margin: 0 auto;
   margin-top: 2.4rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3.2rem;
   display: flex;
   justify-content: space-between;
 `;
