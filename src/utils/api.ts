@@ -3,7 +3,7 @@ const getBestsellerIsbns = async (): Promise<`${number}`[]> => {
   return await (await fetch(url)).json();
 };
 
-const getBookByIsbn = async (isbn: string) => {
+export const getBookByIsbn = async (isbn: string) => {
   const url = `${process.env.NEXT_PUBLIC_API_ENDPOINT}/books/${isbn}`;
   const json = await (await fetch(url)).json();
   if (json !== null) json.isbn = isbn;

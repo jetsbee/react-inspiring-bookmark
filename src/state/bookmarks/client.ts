@@ -21,7 +21,7 @@ const useBookmarksStore = create<
       actions: () => ({
         addBookmark: (isbn) =>
           set(({ bookmarks }) => ({
-            bookmarks: { ...bookmarks, [isbn]: true },
+            bookmarks: { [isbn]: true, ...bookmarks },
           })), // End of addBookmark()
         removeBookmark: (isbn) =>
           set(({ bookmarks }) => {

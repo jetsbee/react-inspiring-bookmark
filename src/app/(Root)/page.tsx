@@ -1,6 +1,6 @@
 import NYTimesBookList from "./(BookList)/NYTimesBookList";
 import { HydrateBookList } from "@/utils/hydrators";
-import { StyledMain } from "./page.styled";
+import { StyledMain } from "@/components/StyledPage/page.styled";
 import BookSearchForm from "@/components/BookSearchForm/BookSearchForm";
 
 const Root = () => {

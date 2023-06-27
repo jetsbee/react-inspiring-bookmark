@@ -1,7 +1,7 @@
 "use client";
 
 import BookListView from "@/components/BookListView/BookListView";
-import { useBestsellerBooksQuery } from "@/state/bestsellerBooks/server";
+import { useBestsellerBooksQuery } from "@/state/book/bestSellers/server";
 import { StyledH2 } from "./NYTimesBookList.styled";
 
 const NYTimesBookList = () => {
