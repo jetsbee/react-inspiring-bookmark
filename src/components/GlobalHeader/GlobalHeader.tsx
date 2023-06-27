@@ -22,7 +22,9 @@ const GlobalHeader = () => {
             />
           </ImageContainer>
         </Link>
-        <MainHeadingView>Inspiring bookmark</MainHeadingView>
+        <Link href="/">
+          <MainHeadingView>Inspiring bookmark</MainHeadingView>
+        </Link>
       </ColDiv>
       <ColDiv>
         <Link href="/bookmarks">
