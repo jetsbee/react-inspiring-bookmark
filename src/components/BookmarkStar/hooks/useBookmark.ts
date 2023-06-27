@@ -1,4 +1,4 @@
-import { useBookmarks, useBookmarksActions } from "@/state/bookmarks";
+import { useBookmarks, useBookmarksActions } from "@/state/bookmarks/client";
 
 const useBookmark = (isbn: string) => {
   const bookmarks = useBookmarks();

@@ -1,5 +1,4 @@
 import { getBestsellerBooks } from "@/utils/api";
-import getQueryClient from "@/utils/getQueryClient";
 import { BESTSELLER_BOOKS_QK } from "@/utils/queryKeys";
 import { useQuery } from "@tanstack/react-query";
 
@@ -18,14 +17,6 @@ interface Book {
   imageLinks?: ImageLinks;
 }
 
-const prefetchBestsellerBooksQuery = async () => {
-  const queryClient = getQueryClient();
-  return await queryClient.prefetchQuery(
-    BESTSELLER_BOOKS_QK,
-    getBestsellerBooks
-  );
-};
-
 // typing - ref. https://github.com/TanStack/query/discussions/1195#discussioncomment-110896
 const useBestsellerBooksQuery = <T extends any = Book[]>(
   select?: (data: Book[]) => T
@@ -36,4 +27,4 @@ const useBestsellerBooksQuery = <T extends any = Book[]>(
     select,
   });
 
-export { prefetchBestsellerBooksQuery, useBestsellerBooksQuery };
+export { useBestsellerBooksQuery };
