@@ -1,3 +1,4 @@
+import BookmarkCounter from "../BookmarkCounter/BookmarkCounter";
 import Link from "../ClientLink/ClientLink";
 import MainHeadingView from "../MainHeadingView/MainHeadingView";
 import {
@@ -28,7 +29,10 @@ const GlobalHeader = () => {
       </ColDiv>
       <ColDiv>
         <Link href="/bookmarks">
-          <StyledP>Bookmarks</StyledP>
+          <StyledP>
+            Bookmarks
+            <BookmarkCounter />
+          </StyledP>
         </Link>
       </ColDiv>
     </StyledHeader>
