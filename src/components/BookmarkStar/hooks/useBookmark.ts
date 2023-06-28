@@ -5,7 +5,9 @@ const useBookmark = (isbn: string) => {
   const { addBookmark, removeBookmark } = useBookmarksActions();
 
   const isBookmarked = bookmarks.hasOwnProperty(isbn);
-  const toggleBookmark = () => {
+  const toggleBookmark = (confirmed: boolean = true) => {
+    if (!confirmed) return;
+
     if (isBookmarked) {
       removeBookmark(isbn);
     } else {
