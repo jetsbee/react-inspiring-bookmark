@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { NytimesBook } from "../../../(types)/nytimes.type";
+import { NytimesBook } from "../../(types)/nytimes.type";
 
 const getNytimesHardcoverFictionBooks = async () => {
   const url = `https://api.nytimes.com/svc/books/v3/lists.json?api-key=${process.env.NYTIMES_BOOKS_API_KEY}&list=hardcover-fiction`;
