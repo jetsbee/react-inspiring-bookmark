@@ -3,13 +3,13 @@ import { persist } from "zustand/middleware";
 
 interface BookmarksState {
   bookmarks: {
-    [isbn: string]: true;
+    [id: string]: true;
   };
 }
 
 interface BookmarksActions {
-  addBookmark: (isbn: string) => void;
-  removeBookmark: (isbn: string) => void;
+  addBookmark: (id: string) => void;
+  removeBookmark: (id: string) => void;
 }
 
 const useBookmarksStore = create<
@@ -19,13 +19,13 @@ const useBookmarksStore = create<
     (set) => ({
       bookmarks: {},
       actions: () => ({
-        addBookmark: (isbn) =>
+        addBookmark: (id) =>
           set(({ bookmarks }) => ({
-            bookmarks: { [isbn]: true, ...bookmarks },
+            bookmarks: { [id]: true, ...bookmarks },
           })), // End of addBookmark()
-        removeBookmark: (isbn) =>
+        removeBookmark: (id) =>
           set(({ bookmarks }) => {
-            const { [isbn]: removedItem, ...rest } = bookmarks;
+            const { [id]: removedItem, ...rest } = bookmarks;
             return { bookmarks: rest };
           }), // End of removeBookmark()
       }),

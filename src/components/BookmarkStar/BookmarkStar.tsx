@@ -7,10 +7,10 @@ import useConfirmBookmark from "./hooks/useConfirmBookmark";
 import ConfirmModal from "../ConfirmModal/ConfirmModal";
 import { createPortal } from "react-dom";
 
-const BookmarkStar = ({ isbn }: Props) => {
+const BookmarkStar = ({ id }: Props) => {
   const isClient = useIsClient();
   const { isBookmarked, toggleBookmarkWithConfirm, needConfirm, askConfirm } =
-    useConfirmBookmark(isbn);
+    useConfirmBookmark(id);
 
   const bookmarkStarViewProps = {
     filled: isBookmarked,

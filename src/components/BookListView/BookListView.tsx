@@ -16,19 +16,23 @@ const BookListView = ({ books }: Props) => {
   return (
     <StyledUl>
       {books.map(
-        ({ isbn, title, authors, publishedDate, description, imageLinks }) => {
+        ({ id, title, authors, publishedDate, description, imageLinks }) => {
           const bookThumbnailProps = {
             title,
             thumbnail: imageLinks?.thumbnail,
           };
 
+          const bookmarkStarProps = {
+            id,
+          };
+
           return (
-            <StyledLi key={isbn}>
+            <StyledLi key={id}>
               <RowDiv>
                 <BookThumbnail {...bookThumbnailProps} />
               </RowDiv>
               <RowDiv>
-                <BookmarkStar isbn={isbn} />
+                <BookmarkStar {...bookmarkStarProps} />
                 <StyledH3>{title}</StyledH3>
                 <StyledPForAuthors>by {authors.join(", ")}</StyledPForAuthors>
                 <StyledPForDate>

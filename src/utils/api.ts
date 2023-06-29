@@ -1,7 +1,7 @@
 import { Book, ImageLinks } from "@/state/book/book.type";
 
 const castBook = ({
-  isbn,
+  id,
   title,
   authors,
   publishedDate,
@@ -9,7 +9,7 @@ const castBook = ({
   language,
   imageLinks,
 }: {
-  isbn?: string;
+  id: string;
   title?: string;
   authors?: string[];
   publishedDate?: string;
@@ -18,7 +18,7 @@ const castBook = ({
   imageLinks?: ImageLinks;
 }): Book => {
   return {
-    isbn: isbn ?? "",
+    id,
     title: title ?? "unknown",
     authors: authors ?? ["unknown"],
     publishedDate: publishedDate ?? "0000",
@@ -33,10 +33,17 @@ const getBestsellerIsbns = async (): Promise<`${number}`[]> => {
   return await (await fetch(url)).json();
 };
 
-export const getBookByIsbn = async (isbn: string) => {
+const getBookByIsbn = async (isbn: string) => {
   const url = `${process.env.NEXT_PUBLIC_API_ENDPOINT}/books/by-isbn/${isbn}`;
   const json = await (await fetch(url)).json();
-  if (json !== null) json.isbn = isbn;
+
+  const book = castBook(json);
+  return book;
+};
+
+export const getBookById = async (id: string) => {
+  const url = `${process.env.NEXT_PUBLIC_API_ENDPOINT}/books/by-id/${id}`;
+  const json = await (await fetch(url)).json();
 
   const book = castBook(json);
   return book;

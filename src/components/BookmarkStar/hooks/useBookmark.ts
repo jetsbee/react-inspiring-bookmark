@@ -1,17 +1,17 @@
 import { useBookmarks, useBookmarksActions } from "@/state/bookmarks/client";
 
-const useBookmark = (isbn: string) => {
+const useBookmark = (id: string) => {
   const bookmarks = useBookmarks();
   const { addBookmark, removeBookmark } = useBookmarksActions();
 
-  const isBookmarked = bookmarks.hasOwnProperty(isbn);
+  const isBookmarked = bookmarks.hasOwnProperty(id);
   const toggleBookmark = (confirmed: boolean = true) => {
     if (!confirmed) return;
 
     if (isBookmarked) {
-      removeBookmark(isbn);
+      removeBookmark(id);
     } else {
-      addBookmark(isbn);
+      addBookmark(id);
     }
   };
 

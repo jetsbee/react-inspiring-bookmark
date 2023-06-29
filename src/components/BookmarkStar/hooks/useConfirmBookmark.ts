@@ -3,8 +3,8 @@
 import { useState } from "react";
 import useBookmark from "./useBookmark";
 
-const useConfirmBookmark = (isbn: string) => {
-  const { toggleBookmark, isBookmarked } = useBookmark(isbn);
+const useConfirmBookmark = (id: string) => {
+  const { toggleBookmark, isBookmarked } = useBookmark(id);
   const [needConfirm, setNeedConfirm] = useState(false);
 
   const toggleBookmarkWithConfirm = (confirmed: boolean) => {
