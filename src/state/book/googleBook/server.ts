@@ -17,18 +17,20 @@ export interface GoogleBook {
   imageLinks?: ImageLinks;
 }
 
-const useGoogleBookQueries = <T extends any = GoogleBook>(
+const useGoogleBookQueries = <T extends any = GoogleBook | null>(
   isbns: string[],
-  select?: (data: GoogleBook) => T
+  select?: (data: GoogleBook | null) => T
 ) => {
   return useQueries({
-    queries: isbns.map<UseQueryOptions<GoogleBook, unknown, T>>((isbn) => {
-      return {
-        queryKey: getGoogleBookQk(isbn),
-        queryFn: () => getBookByIsbn(isbn),
-        select,
-      };
-    }),
+    queries: isbns.map<UseQueryOptions<GoogleBook | null, unknown, T>>(
+      (isbn) => {
+        return {
+          queryKey: getGoogleBookQk(isbn),
+          queryFn: () => getBookByIsbn(isbn),
+          select,
+        };
+      }
+    ),
   });
 };
 
