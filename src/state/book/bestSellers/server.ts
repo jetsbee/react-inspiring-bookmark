@@ -7,7 +7,7 @@ interface ImageLinks {
   thumbnail: string;
 }
 
-interface Book {
+export interface Book {
   isbn: string;
   title: string;
   authors: string[];
@@ -18,8 +18,8 @@ interface Book {
 }
 
 // typing - ref. https://github.com/TanStack/query/discussions/1195#discussioncomment-110896
-const useBestsellerBooksQuery = <T extends any = Book[]>(
-  select?: (data: Book[]) => T
+const useBestsellerBooksQuery = <T extends any = (Book | null)[]>(
+  select?: (data: (Book | null)[]) => T
 ) =>
   useQuery({
     queryKey: BESTSELLER_BOOKS_QK,
