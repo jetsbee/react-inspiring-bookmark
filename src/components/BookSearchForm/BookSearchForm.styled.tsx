@@ -1,11 +1,15 @@
 "use client";
 
 import styled from "@emotion/styled";
-import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes, forwardRef } from "react";
 
-const TextInput = (props: InputHTMLAttributes<HTMLInputElement>) => (
-  <input type="text" {...props} />
+const TextInput = forwardRef(
+  (
+    props: InputHTMLAttributes<HTMLInputElement>,
+    ref?: React.Ref<HTMLInputElement>
+  ) => <input type="text" {...props} ref={ref} />
 );
+TextInput.displayName = "TextInput";
 
 const SubmitInput = (props: InputHTMLAttributes<HTMLInputElement>) => (
   <input type="submit" {...props} />
