@@ -28,6 +28,8 @@ const castBook = ({
   };
 };
 
+const assertBook = (book: Book | null): book is Book => book !== null;
+
 const getBestsellerIsbns = async (): Promise<`${number}`[]> => {
   const url = `${process.env.NEXT_PUBLIC_API_ENDPOINT}/bestsellers/isbns`;
   return await (await fetch(url)).json();
@@ -37,7 +39,7 @@ const getBookByIsbn = async (isbn: string) => {
   const url = `${process.env.NEXT_PUBLIC_API_ENDPOINT}/books/by-isbn/${isbn}`;
   const json = await (await fetch(url)).json();
 
-  const book = castBook(json);
+  const book = json ? castBook(json) : null;
   return book;
 };
 
@@ -45,7 +47,7 @@ export const getBookById = async (id: string) => {
   const url = `${process.env.NEXT_PUBLIC_API_ENDPOINT}/books/by-id/${id}`;
   const json = await (await fetch(url)).json();
 
-  const book = castBook(json);
+  const book = json ? castBook(json) : null;
   return book;
 };
 
@@ -62,6 +64,7 @@ export const getBestsellerBooks = async () => {
   const books = settledResults
     .filter(assertFulfilled)
     .map((res) => res.value)
+    .filter(assertBook)
     .map(castBook);
 
   return books;
