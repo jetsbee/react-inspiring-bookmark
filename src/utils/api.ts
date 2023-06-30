@@ -19,11 +19,11 @@ const castBook = ({
 }): Book => {
   return {
     id,
-    title: title ?? "unknown",
-    authors: authors ?? ["unknown"],
+    title: title ?? "Unknown",
+    authors: authors ?? ["Unknown"],
     publishedDate: publishedDate ?? "0000",
     description: description ?? "",
-    language: language ?? "unknown",
+    language: language ?? "Unknown",
     imageLinks,
   };
 };
@@ -66,5 +66,21 @@ export const getBestsellerBooks = async () => {
     .map((res) => res.value)
     .filter(assertBook);
 
+  return books;
+};
+
+export const getBooksByKeywordsAndStartIndex = async (
+  keywords: string,
+  startIndex: number
+) => {
+  if (!Number.isInteger(startIndex) || startIndex < 0) {
+    throw new Error("startIndex params should be 0 or positive integer.");
+  }
+  if (keywords === "") return [];
+
+  const url = `${process.env.NEXT_PUBLIC_API_ENDPOINT}/books/by-keywords/${keywords}/${startIndex}`;
+  const json = await (await fetch(url)).json();
+
+  const books: Book[] = json.filter(assertBook).map(castBook);
   return books;
 };

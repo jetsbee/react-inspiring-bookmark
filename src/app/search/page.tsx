@@ -1,14 +1,10 @@
-"use client";
-
 import { StyledMain } from "@/components/StyledPage/page.styled";
-import useKeywordsParam from "./(hooks)/useKeywordsParam";
+import SearchResultList from "./(SearchResultList)/SearchResultList";
 
 const Page = () => {
-  const keywords = useKeywordsParam();
-
   return (
     <StyledMain>
-      <div>{keywords}</div>
+      <SearchResultList />
     </StyledMain>
   );
 };

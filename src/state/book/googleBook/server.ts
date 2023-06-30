@@ -1,6 +1,9 @@
-import { getBookById } from "@/utils/api";
-import { getGoogleBookQk } from "@/utils/queryKeys";
-import { UseQueryOptions, useQueries } from "@tanstack/react-query";
+import { getBookById, getBooksByKeywordsAndStartIndex } from "@/utils/api";
+import {
+  getGoogleBookQk,
+  getGoogleBooksByKeywordsAndStartIndexQk,
+} from "@/utils/queryKeys";
+import { UseQueryOptions, useQueries, useQuery } from "@tanstack/react-query";
 import { Book } from "../book.type";
 
 const useGoogleBookQueries = <T extends any = Book | null>(
@@ -18,4 +21,16 @@ const useGoogleBookQueries = <T extends any = Book | null>(
   });
 };
 
-export { useGoogleBookQueries };
+const useGoogleBooksByKeywordsAndStartIndexQuery = <T extends any = Book[]>(
+  keywords: string,
+  startIndex: number,
+  select?: (data: Book[]) => T
+) => {
+  return useQuery({
+    queryKey: getGoogleBooksByKeywordsAndStartIndexQk(keywords, startIndex),
+    queryFn: () => getBooksByKeywordsAndStartIndex(keywords, startIndex),
+    select,
+  });
+};
+
+export { useGoogleBookQueries, useGoogleBooksByKeywordsAndStartIndexQuery };
