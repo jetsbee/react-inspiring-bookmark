@@ -64,8 +64,7 @@ export const getBestsellerBooks = async () => {
   const books = settledResults
     .filter(assertFulfilled)
     .map((res) => res.value)
-    .filter(assertBook)
-    .map(castBook);
+    .filter(assertBook);
 
   return books;
 };
