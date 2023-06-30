@@ -3,7 +3,13 @@
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
-const useSearchForm = (pagePath: string) => {
+const useSearchForm = ({
+  url,
+  paramName,
+}: {
+  url: string;
+  paramName: string;
+}) => {
   const router = useRouter();
   const textInputRef = useRef<HTMLInputElement>(null);
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -15,7 +21,7 @@ const useSearchForm = (pagePath: string) => {
     }
 
     router.push(
-      `${pagePath}?keywords=${textInputRef.current?.value.replace(" ", "+")}`
+      `${url}?${paramName}=${textInputRef.current?.value.replace(" ", "+")}`
     );
   };
 

@@ -8,7 +8,10 @@ import {
 import useSearchForm from "./hooks/useSearchForm";
 
 const BookSearchForm = () => {
-  const { handleFormSubmit, textInputRef } = useSearchForm("/search");
+  const { handleFormSubmit, textInputRef } = useSearchForm({
+    url: "/search",
+    paramName: "keywords",
+  });
 
   return (
     <StyledForm onSubmit={handleFormSubmit}>
