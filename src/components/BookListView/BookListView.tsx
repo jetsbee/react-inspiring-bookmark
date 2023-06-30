@@ -32,8 +32,10 @@ const BookListView = ({ books }: Props) => {
                 <BookThumbnail {...bookThumbnailProps} />
               </RowDiv>
               <RowDiv>
-                <BookmarkStar {...bookmarkStarProps} />
-                <StyledH3>{title}</StyledH3>
+                <StyledH3>
+                  <BookmarkStar {...bookmarkStarProps} />
+                  {title}
+                </StyledH3>
                 <StyledPForAuthors>by {authors.join(", ")}</StyledPForAuthors>
                 <StyledPForDate>
                   published{" "}
