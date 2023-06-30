@@ -15,7 +15,7 @@ const BookSearchForm = () => {
 
   return (
     <StyledForm onSubmit={handleFormSubmit}>
-      <StyledTextInput placeholder="Search for books..." ref={textInputRef} />
+      <StyledTextInput placeholder="Find more books..." ref={textInputRef} />
       <StyledSubmitInput value="BookSearch" />
     </StyledForm>
   );
