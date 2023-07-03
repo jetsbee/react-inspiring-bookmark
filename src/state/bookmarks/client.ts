@@ -1,46 +1,28 @@
+"use client";
+
+import { BookmarksContext } from "@/utils/zustandContext";
 import { createBoundedUseStore } from "@/utils/zustandUtils";
-import { persist } from "zustand/middleware";
-import { createStore } from "zustand/vanilla";
+import { useContext } from "react";
+import { BookmarksState, bookmarksStore } from "./store";
 
-interface BookmarksState {
-  bookmarks: {
-    [id: string]: true;
-  };
-}
+const useBookmarksStoreCreator = () => {
+  const storeFromContext = useContext(BookmarksContext);
 
-interface BookmarksActions {
-  addBookmark: (id: string) => void;
-  removeBookmark: (id: string) => void;
-}
-
-type BookmarkStateAndActions = BookmarksState & {
-  actions: () => BookmarksActions;
+  return !storeFromContext
+    ? createBoundedUseStore(bookmarksStore)
+    : createBoundedUseStore(storeFromContext);
 };
 
-const bookmarksStore = createStore<BookmarkStateAndActions>()(
-  persist(
-    (set) => ({
-      bookmarks: {},
-      actions: () => ({
-        addBookmark: (id) =>
-          set(({ bookmarks }) => ({
-            bookmarks: { [id]: true, ...bookmarks },
-          })), // End of addBookmark()
-        removeBookmark: (id) =>
-          set(({ bookmarks }) => {
-            const { [id]: removedItem, ...rest } = bookmarks;
-            return { bookmarks: rest };
-          }), // End of removeBookmark()
-      }),
-    }),
-    { name: "bookmarks-storage" }
-  )
-);
+const useBookmarksStore = <T>(
+  selector?: (state: BookmarksState) => T,
+  equals?: (a: T, b: T) => boolean
+) => {
+  const useBookmarksStoreFromCreator = useBookmarksStoreCreator();
+  return useBookmarksStoreFromCreator(selector!, equals);
+};
 
-const useBookmarksStore = createBoundedUseStore(bookmarksStore);
+export const useBookmarksActions = () =>
+  useBookmarksStore((state) => state.actions());
 
-const useBookmarksActions = () => useBookmarksStore((state) => state.actions());
-
-const useBookmarks = () => useBookmarksStore(({ bookmarks }) => bookmarks);
-
-export { useBookmarks, useBookmarksActions, useBookmarksStore };
+export const useBookmarks = () =>
+  useBookmarksStore(({ bookmarks }) => bookmarks);
