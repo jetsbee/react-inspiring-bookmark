@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  StyledTextInput,
-  StyledSubmitInput,
   StyledForm,
+  StyledSubmitInput,
+  StyledTextInput,
 } from "./BookSearchForm.styled";
 import useSearchForm from "./hooks/useSearchForm";
 

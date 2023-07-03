@@ -1,6 +1,7 @@
 import { dateFormat } from "@/utils/dateFormat";
 import BookDescription from "../BookDescription/BookDescription";
 import BookThumbnail from "../BookThumbnail/BookThumbnail";
+import BookmarkStar from "../BookmarkStar/BookmarkStar";
 import {
   RowDiv,
   StyledH3,
@@ -10,7 +11,6 @@ import {
   StyledUl,
 } from "./BookListView.styled";
 import { Props } from "./BookListView.type";
-import BookmarkStar from "../BookmarkStar/BookmarkStar";
 
 const BookListView = ({ books }: Props) => {
   return (

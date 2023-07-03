@@ -1,6 +1,6 @@
-import { createStore } from "zustand/vanilla";
-import { persist } from "zustand/middleware";
 import { createBoundedUseStore } from "@/utils/zustandUtils";
+import { persist } from "zustand/middleware";
+import { createStore } from "zustand/vanilla";
 
 interface BookmarksState {
   bookmarks: {
@@ -43,4 +43,4 @@ const useBookmarksActions = () => useBookmarksStore((state) => state.actions());
 
 const useBookmarks = () => useBookmarksStore(({ bookmarks }) => bookmarks);
 
-export { useBookmarksActions, useBookmarks, useBookmarksStore };
+export { useBookmarks, useBookmarksActions, useBookmarksStore };

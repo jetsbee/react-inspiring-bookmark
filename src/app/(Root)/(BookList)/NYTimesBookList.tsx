@@ -1,8 +1,8 @@
 "use client";
 
 import BookListView from "@/components/BookListView/BookListView";
-import { StyledH2 } from "./NYTimesBookList.styled";
 import useBestSellerBooks from "./(hooks)/useBestSellerBooks";
+import { StyledH2 } from "./NYTimesBookList.styled";
 
 const NYTimesBookList = () => {
   const data = useBestSellerBooks();

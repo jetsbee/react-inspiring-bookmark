@@ -1,6 +1,6 @@
+import { prefetchBestsellerBooksQuery } from "@/state/book/bestSellers/ssr";
 import getQueryClient from "@/utils/getQueryClient";
 import { Hydrate, dehydrate } from "@tanstack/react-query";
-import { prefetchBestsellerBooksQuery } from "@/state/book/bestSellers/ssr";
 
 interface Props {
   children: React.ReactNode;

@@ -1,8 +1,8 @@
 "use client";
 
 import BookListView from "@/components/BookListView/BookListView";
-import { StyledH2, StyledP } from "./BookmarkList.styled";
 import useBookmarkedBooks from "./(hooks)/useBookmarkedBooks";
+import { StyledP } from "./BookmarkList.styled";
 
 const BookmarkList = () => {
   const data = useBookmarkedBooks();

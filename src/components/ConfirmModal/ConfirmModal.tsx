@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { Props } from "./ConfirmModal.type";
 import {
   StyledButton,
   StyledDialog,
@@ -7,6 +6,7 @@ import {
   StyledMenu,
   StyledP,
 } from "./ConfirmModal.styled";
+import { Props } from "./ConfirmModal.type";
 
 const ConfirmModal = ({ children, onConfirm, ...props }: Props) => {
   const dialogRef = useRef<HTMLDialogElement>(null);

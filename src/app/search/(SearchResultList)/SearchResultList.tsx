@@ -1,9 +1,9 @@
 "use client";
 
-import useKeywordsParam from "./(hooks)/useKeywordsParam";
 import BookListView from "@/components/BookListView/BookListView";
-import { StyledButton, StyledP } from "./SearchResultList.styled";
+import useKeywordsParam from "./(hooks)/useKeywordsParam";
 import useSearchBooks from "./(hooks)/useSearchBooks";
+import { StyledButton, StyledP } from "./SearchResultList.styled";
 
 const SearchResultList = () => {
   const keywords = useKeywordsParam();
