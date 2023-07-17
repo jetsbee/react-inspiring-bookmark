@@ -3,6 +3,7 @@
 import {
   BookmarksProps,
   BookmarksStore,
+  bookmarksStore,
   createBookmarksStore,
 } from "@/state/bookmarks/store";
 import { useRef } from "react";
@@ -16,6 +17,7 @@ const BookmarksStoreProvider = ({
 }: BookmarksStoreProviderProps) => {
   const storeRef = useRef<BookmarksStore>();
   if (!storeRef.current) {
+    bookmarksStore.persist.clearStorage();
     storeRef.current = createBookmarksStore(props);
   }
   return (

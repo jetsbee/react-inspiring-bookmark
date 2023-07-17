@@ -1,10 +1,10 @@
 import React from "react";
 import { inter } from "../src/app/layout";
 import Providers from "../src/utils/providers";
-import { resetAllStores } from "../src/utils/zustandUtils";
+import { resetStores } from "../src/utils/zustandUtils";
 
 const ResetStoreDecorator = (Story: React.ComponentType) => {
-  resetAllStores();
+  resetStores();
   return <Story />;
 };
 

@@ -1,5 +1,6 @@
-import { createStore } from "@/utils/zustandUtils";
+import { addResetter } from "@/utils/zustandUtils";
 import { persist } from "zustand/middleware";
+import { createStore } from "zustand/vanilla";
 
 export interface BookmarksProps {
   bookmarks: {
@@ -13,7 +14,6 @@ interface BookmarksActions {
 }
 
 export interface BookmarksState extends BookmarksProps {
-  reset: () => void;
   actions: () => BookmarksActions;
 }
 
@@ -21,14 +21,12 @@ export const createBookmarksStore = (initProps?: Partial<BookmarksProps>) => {
   const DEFAULT_PROPS: BookmarksProps = {
     bookmarks: {},
   };
-  return createStore<BookmarksState>()(
+
+  const store = createStore<BookmarksState>()(
     persist(
       (set) => ({
         ...DEFAULT_PROPS,
         ...initProps,
-        reset: () => {
-          set({ ...DEFAULT_PROPS, ...initProps });
-        },
         actions: () => ({
           addBookmark: (id) =>
             set(({ bookmarks }) => ({
@@ -44,6 +42,13 @@ export const createBookmarksStore = (initProps?: Partial<BookmarksProps>) => {
       { name: "bookmarks-storage" }
     )
   );
+
+  // if store does not use context provider
+  if (initProps === undefined) {
+    addResetter(store, () => store.setState({ ...DEFAULT_PROPS }));
+  }
+
+  return store;
 };
 
 export type BookmarksStore = ReturnType<typeof createBookmarksStore>;

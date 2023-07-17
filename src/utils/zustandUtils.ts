@@ -1,5 +1,5 @@
 import { StoreApi, useStore } from "zustand";
-import { StateCreator, createStore as _createStore } from "zustand/vanilla";
+import { createStore } from "zustand/vanilla";
 
 export const createBoundedUseStore = ((store) => (selector, equals) =>
   useStore(store, selector as never, equals)) as <S extends StoreApi<unknown>>(
@@ -17,21 +17,34 @@ type ExtractState<S> = S extends { getState: () => infer X } ? X : never;
 
 const resetters: (() => void)[] = [];
 
-export const createStore = (<T extends unknown & { reset?: () => void }>(
-  f: StateCreator<T> | undefined
+export const addResetter = <T extends unknown>(
+  store: StoreApiOrPersistedStoreApi<T>,
+  resetFn?: () => void
 ) => {
-  if (f === undefined) return createStore;
-  const store = _createStore(f);
-  const initialState = store.getState();
-  resetters.push(() => {
-    initialState.reset
-      ? initialState.reset() // supports persist middleware
-      : store.setState(initialState, true);
-  });
-  return store;
-}) as typeof _createStore;
+  const hasPersist = (
+    s: StoreApiOrPersistedStoreApi<T>
+  ): s is PersistedStoreApi<T> => {
+    return s.hasOwnProperty("persist");
+  };
 
-export const resetAllStores = () => {
+  const initialState = store.getState();
+  if (hasPersist(store) && resetFn) {
+    resetters.push(resetFn);
+  } else {
+    // for store with context provider or without persistency
+    resetters.push(() => {
+      store.setState(initialState, true);
+    });
+  }
+};
+
+type StoreApiOrPersistedStoreApi<T> = StoreApi<T> | PersistedStoreApi<T>;
+
+type PersistedStoreApi<T> = ReturnType<
+  typeof createStore<T, [["zustand/persist", T]]>
+>;
+
+export const resetStores = () => {
   for (const resetter of resetters) {
     resetter();
   }
