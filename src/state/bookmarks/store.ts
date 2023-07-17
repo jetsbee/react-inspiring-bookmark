@@ -1,5 +1,5 @@
+import { createStore } from "@/utils/zustandUtils";
 import { persist } from "zustand/middleware";
-import { createStore } from "zustand/vanilla";
 
 export interface BookmarksProps {
   bookmarks: {
@@ -13,6 +13,7 @@ interface BookmarksActions {
 }
 
 export interface BookmarksState extends BookmarksProps {
+  reset: () => void;
   actions: () => BookmarksActions;
 }
 
@@ -25,6 +26,9 @@ export const createBookmarksStore = (initProps?: Partial<BookmarksProps>) => {
       (set) => ({
         ...DEFAULT_PROPS,
         ...initProps,
+        reset: () => {
+          set({ ...DEFAULT_PROPS, ...initProps });
+        },
         actions: () => ({
           addBookmark: (id) =>
             set(({ bookmarks }) => ({
