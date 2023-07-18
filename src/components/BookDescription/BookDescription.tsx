@@ -8,7 +8,9 @@ const BookDescription = ({ children: text }: Props) => {
   return (
     <div>
       <StyledP>
-        {showMore ? text : `${text.substring(0, MIN_TEXT_LENGTH_LIMIT)}...`}
+        {showMore || text.length <= MIN_TEXT_LENGTH_LIMIT
+          ? text
+          : `${text.substring(0, MIN_TEXT_LENGTH_LIMIT - 3)}...`}
       </StyledP>
       {text.length > MIN_TEXT_LENGTH_LIMIT && (
         <StyledBtn onClick={onToggle}>
