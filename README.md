@@ -18,4 +18,7 @@ npm install
 
 # Run dev server
 npm run dev
+
+# Run storybook
+npm run storybook
 ```
