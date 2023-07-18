@@ -1,9 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const useImageFallback = (thumbnail_path?: string) => {
   const [imageError, setImageError] = useState(false);
+
+  useEffect(() => {
+    setImageError(false);
+  }, [thumbnail_path]);
 
   const handleOnError = () => {
     setImageError(true);
