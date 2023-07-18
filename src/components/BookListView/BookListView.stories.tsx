@@ -14,6 +14,18 @@ export const Default: Story = {
   args: {
     books: [
       {
+        id: "6_CLEAAAQBAJ",
+        title: "Fourth Wing",
+        authors: ["Rebecca Yarros"],
+        publishedDate: "2023-05-02",
+        description:
+          "As war grows more deadly, Violet Sorrengail joins the elite Navarre: the dragon riders. But she'll need to keep her wits because once you enter the Basgiath War College, there are only two ways out: graduate or die.",
+        imageLinks: {
+          thumbnail:
+            "http://books.google.com/books/content?id=6_CLEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        },
+      },
+      {
         id: "DdtjzwEACAAJ",
         title: "The Five-Star Weekend",
         authors: ["Elin Hilderbrand"],
