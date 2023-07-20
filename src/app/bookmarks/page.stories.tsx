@@ -33,6 +33,8 @@ const meta: Meta<typeof BookmarksPage> = {
 export default meta;
 type Story = StoryObj<typeof BookmarksPage>;
 
+// There's error on browser console. (Something with BookmarksStoreProvider and MSW)
+// ref. https://github.com/mswjs/msw/issues/1640#issuecomment-1642283698
 export const Default: Story = {
   decorators: [
     ...RootPageMeta.decorators!,
