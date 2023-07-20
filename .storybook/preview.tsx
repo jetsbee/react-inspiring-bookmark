@@ -1,7 +1,11 @@
 import type { Preview } from "@storybook/react";
 
+import { initialize, mswDecorator } from "msw-storybook-addon";
 import "../src/app/globals.css";
 import GlobalDecorators from "./GlobalDecorators";
+
+// Initialize MSW
+initialize();
 
 const preview: Preview = {
   parameters: {
@@ -13,7 +17,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: GlobalDecorators,
+  decorators: [...GlobalDecorators, mswDecorator],
 };
 
 export default preview;
