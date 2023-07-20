@@ -4,7 +4,7 @@ import BookThumbnail from "../BookThumbnail/BookThumbnail";
 import BookmarkStar from "../BookmarkStar/BookmarkStar";
 import {
   RowDiv,
-  StyledH3,
+  StyledH1,
   StyledLi,
   StyledPForAuthors,
   StyledPForDate,
@@ -28,22 +28,24 @@ const BookListView = ({ books }: Props) => {
 
           return (
             <StyledLi key={id}>
-              <RowDiv>
-                <BookThumbnail {...bookThumbnailProps} />
-              </RowDiv>
-              <RowDiv>
-                <StyledH3>
-                  <BookmarkStar {...bookmarkStarProps} />
-                  {title}
-                </StyledH3>
-                <StyledPForAuthors>by {authors.join(", ")}</StyledPForAuthors>
-                <StyledPForDate>
-                  published{" "}
-                  {dateFormat(publishedDate).length === 4 ? "in" : "on"}{" "}
-                  {dateFormat(publishedDate)}
-                </StyledPForDate>
-                <BookDescription>{description}</BookDescription>
-              </RowDiv>
+              <section>
+                <RowDiv>
+                  <BookThumbnail {...bookThumbnailProps} />
+                </RowDiv>
+                <RowDiv>
+                  <StyledH1>
+                    <BookmarkStar {...bookmarkStarProps} />
+                    {title}
+                  </StyledH1>
+                  <StyledPForAuthors>by {authors.join(", ")}</StyledPForAuthors>
+                  <StyledPForDate>
+                    published{" "}
+                    {dateFormat(publishedDate).length === 4 ? "in" : "on"}{" "}
+                    {dateFormat(publishedDate)}
+                  </StyledPForDate>
+                  <BookDescription>{description}</BookDescription>
+                </RowDiv>
+              </section>
             </StyledLi>
           );
         }

@@ -26,6 +26,7 @@ const BookmarkStar = ({ id }: Props) => {
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
       isBookmarked ? askConfirm() : toggleBookmarkWithConfirm(true);
     },
+    "aria-label": "Bookmark",
   };
 
   return isClient ? (

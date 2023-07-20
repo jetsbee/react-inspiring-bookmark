@@ -27,7 +27,7 @@ export const RowDiv = styled.div`
   }
 `;
 
-export const StyledH3 = styled.h3`
+export const StyledH1 = styled.h1`
   font-size: 2.4rem;
   font-weight: 600;
   margin-bottom: 1.2rem;
