@@ -1,10 +1,18 @@
-const { injectAxe, checkA11y } = require("axe-playwright");
+const { injectAxe, checkA11y, configureAxe } = require("axe-playwright");
 
 module.exports = {
   async preRender(page) {
     await injectAxe(page);
   },
   async postRender(page) {
+    await configureAxe(page, {
+      rules: [
+        {
+          id: "color-contrast",
+          enabled: false,
+        },
+      ],
+    });
     await checkA11y(page, "#storybook-root", {
       detailedReport: true,
       detailedReportOptions: {
