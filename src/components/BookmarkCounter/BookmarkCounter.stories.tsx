@@ -2,17 +2,23 @@ import BookmarksStoreProvider from "@/utils/providers/BookmarksStoreProvider";
 import type { Meta, StoryObj } from "@storybook/react";
 import BookmarkCounter from "./BookmarkCounter";
 
-const MockedStateWithEmpty = { bookmarks: {} };
 const typedTrue: true = true;
-export const MockedStateWithOneBookmarked = {
-  bookmarks: { "6_CLEAAAQBAJ": typedTrue },
+const MockedStateWithOneBookmarked = {
+  bookmarks: { "6_CLEAAAQBAJ": typedTrue }, // Fourth Wing
 };
+export const MockedStateWithTwoBookmarked = {
+  bookmarks: {
+    "6_CLEAAAQBAJ": typedTrue, // Fourth Wing
+    DdtjzwEACAAJ: typedTrue, // The Five-Star Weekend
+  },
+};
+export const MockedStateWithEmpty = { bookmarks: {} };
 
 const meta: Meta<typeof BookmarkCounter> = {
   title: "BookmarkCounter",
   component: BookmarkCounter,
   tags: ["autodocs"],
-  excludeStories: /.*MockedStateWithOneBookmarked$/,
+  excludeStories: /.*MockedStateWith/,
 };
 
 export default meta;
@@ -23,6 +29,18 @@ export const WithOneMarked: Story = {
     (story) => {
       return (
         <BookmarksStoreProvider {...MockedStateWithOneBookmarked}>
+          {story()}
+        </BookmarksStoreProvider>
+      );
+    },
+  ],
+};
+
+export const WithTwoMarked: Story = {
+  decorators: [
+    (story) => {
+      return (
+        <BookmarksStoreProvider {...MockedStateWithTwoBookmarked}>
           {story()}
         </BookmarksStoreProvider>
       );
