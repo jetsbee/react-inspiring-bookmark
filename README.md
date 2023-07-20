@@ -23,6 +23,9 @@ npm run dev
 npm run storybook
 
 # Run test-storybook
-npm run storybook # Start Storybook in one terminal.
-npm run test-storybook # Start test runner in another terminal.
+npm run storybook # Start Storybook in one terminal
+npm run test-storybook # Start test runner in another terminal
+
+## or
+yarn test # Need to install yarn first
 ```
