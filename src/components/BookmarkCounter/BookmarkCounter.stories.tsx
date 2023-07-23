@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import BookmarkCounter from "./BookmarkCounter";
 
 const typedTrue: true = true;
-const MockedStateWithOneBookmarked = {
+export const MockedStateWithOneBookmarked = {
   bookmarks: { "6_CLEAAAQBAJ": typedTrue }, // Fourth Wing
 };
 export const MockedStateWithTwoBookmarked = {
