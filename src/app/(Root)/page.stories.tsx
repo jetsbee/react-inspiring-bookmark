@@ -3,8 +3,10 @@ import BookSearchForm from "@/components/BookSearchForm/BookSearchForm";
 import GlobalHeader from "@/components/GlobalHeader/GlobalHeader";
 import { StyledMain } from "@/components/StyledPage/page.styled";
 import type { Meta, StoryObj } from "@storybook/react";
+import { within } from "@storybook/testing-library";
 import { rest } from "msw";
 import NYTimesBookList from "./(BookList)/NYTimesBookList";
+import { testBookmarkStarAndBookmarkCounter } from "./page.stories.test";
 
 const RootPage = () => {
   return (
@@ -58,5 +60,13 @@ export const Default: Story = {
         }),
       ],
     },
+  },
+};
+
+export const FirstBookmarkButtonClicked: Story = {
+  ...Default,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await testBookmarkStarAndBookmarkCounter(canvas);
   },
 };
