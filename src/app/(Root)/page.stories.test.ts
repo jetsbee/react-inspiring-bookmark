@@ -1,20 +1,10 @@
+import { Canvas, sleep } from "@/test-utils";
 import { expect } from "@storybook/jest";
-import { fireEvent, waitFor, within } from "@storybook/testing-library";
-import { Queries, queries } from "@testing-library/dom";
+import { fireEvent, waitFor } from "@storybook/testing-library";
 
-export type Canvas<
-  QueriesToBind extends Queries = typeof queries,
-  // Extra type parameter required for reassignment.
-  T extends QueriesToBind = QueriesToBind
-> = ReturnType<typeof within<T>>;
-// ref. getQueriesForElement() in @testing-library/dom/types/get-queries-for-element.d.ts
-
-// Function to emulate pausing between interactions
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-export const testBookmarkStarAndBookmarkCounter = async (canvas: Canvas) => {
+export const clickBookmarkStar_EmptyBookmark_BookmarkCounterEqualToOne = async (
+  canvas: Canvas
+) => {
   await sleep(600);
 
   // Waits for the component to be updated based on the store

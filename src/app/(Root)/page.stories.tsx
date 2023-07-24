@@ -6,7 +6,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { within } from "@storybook/testing-library";
 import { rest } from "msw";
 import NYTimesBookList from "./(BookList)/NYTimesBookList";
-import { testBookmarkStarAndBookmarkCounter } from "./page.stories.test";
+import { clickBookmarkStar_EmptyBookmark_BookmarkCounterEqualToOne } from "./page.stories.test";
 
 const RootPage = () => {
   return (
@@ -67,6 +67,6 @@ export const FirstBookmarkButtonClicked: Story = {
   ...Default,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    await testBookmarkStarAndBookmarkCounter(canvas);
+    await clickBookmarkStar_EmptyBookmark_BookmarkCounterEqualToOne(canvas);
   },
 };
