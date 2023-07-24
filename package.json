@@ -10,7 +10,10 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook",
-    "test": "yarn concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn storybook --ci\" \"yarn wait-on tcp:6006 && yarn test-storybook\""
+    "nyc-report": "nyc report --reporter=text -t .nyc_output --report-dir .nyc_output",
+    "clean-nyc-report": "shx rm -rf .nyc_output",
+    "test-storybook-coverage": "test-storybook --coverage && yarn nyc-report && yarn clean-nyc-report",
+    "test": "yarn concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn storybook --ci\" \"yarn wait-on tcp:6006 && yarn test-storybook-coverage\""
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -29,6 +32,7 @@
     "zustand": "^4.3.8"
   },
   "devDependencies": {
+    "@jsdevtools/coverage-istanbul-loader": "^3.0.5",
     "@storybook/addon-a11y": "^7.1.0",
     "@storybook/addon-essentials": "^7.1.0",
     "@storybook/addon-interactions": "^7.1.0",
@@ -46,6 +50,8 @@
     "eslint-plugin-storybook": "^0.6.12",
     "msw": "^1.2.3",
     "msw-storybook-addon": "^1.8.0",
+    "nyc": "^15.1.0",
+    "shx": "^0.3.4",
     "storybook": "^7.1.0",
     "wait-on": "^7.0.1"
   },
