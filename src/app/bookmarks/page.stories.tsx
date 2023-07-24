@@ -6,8 +6,10 @@ import {
 } from "@/components/BookmarkCounter/BookmarkCounter.stories";
 import BookmarksStoreProvider from "@/utils/providers/BookmarksStoreProvider";
 import type { Meta, StoryObj } from "@storybook/react";
+import { within } from "@storybook/testing-library";
 import { rest } from "msw";
 import BookmarksPage from "./page";
+import { clickBookmarkStar_TwoBooksMarked_OneBookInBookmarkList } from "./page.stories.test";
 
 const urlPathForBookByGoogleBookId = `${process.env.NEXT_PUBLIC_API_ENDPOINT}/books/by-id/:googleBookId`;
 
@@ -57,4 +59,12 @@ export const Empty: Story = {
       );
     },
   ],
+};
+
+export const SecondBookmarkButtonClickedAndCinfirm: Story = {
+  ...Default,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await clickBookmarkStar_TwoBooksMarked_OneBookInBookmarkList(canvas);
+  },
 };
