@@ -66,7 +66,7 @@ const bodyFont = createInterFont(
   {
     sizeSize: (size) => Math.round(size * 1.1),
     sizeLineHeight: (size) => Math.round(size * 1.1 + (size > 20 ? 10 : 10)),
-  }
+  },
 );
 
 export const config: any = createTamagui({
