@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "yarn storybook",
-    "build": "yarn build-storybook",
+    "dev": "TAMAGUI_TARGET=web yarn storybook",
+    "build": "TAMAGUI_TARGET=web yarn build-storybook",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -29,6 +29,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "babel-plugin-react-native-web": "^0.19.7",
+    "esbuild-loader": "^3.1.0",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
@@ -36,6 +37,7 @@
     "metro-react-native-babel-preset": "^0.77.0",
     "react-native-web": "^0.19.7",
     "storybook": "7.1.1",
+    "tamagui-loader": "^1.50.2",
     "typescript": "^5.0.2"
   }
 }
