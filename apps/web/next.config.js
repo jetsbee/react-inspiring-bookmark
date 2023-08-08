@@ -42,7 +42,7 @@ module.exports = function (name, { defaultConfig }) {
 
   const tamaguiPlugin = withTamagui({
     config: "./tamagui.config.ts",
-    components: ["tamagui", "app"],
+    components: ["tamagui"],
 
     // rest are all optional:
 

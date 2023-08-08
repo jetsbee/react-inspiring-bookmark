@@ -5,7 +5,7 @@ import { shouldExclude } from "tamagui-loader";
 
 const tamaguiOptions = {
   config: "./tamagui.config.ts",
-  components: ["tamagui", "app"],
+  components: ["tamagui"],
   // rest are all optional:
   // disable static extraction, faster to iterate in dev mode (default false)
   disableExtraction: process.env.NODE_ENV === "development",
