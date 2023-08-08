@@ -1,4 +1,4 @@
-import { StyledLayout } from "app/src/components/Layout";
+import { GlobalLayout } from "app/src/components/GlobalLayout";
 import { Providers } from "app/src/providers";
 import "./globals.css";
 
@@ -11,7 +11,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <StyledLayout>{children}</StyledLayout>
+          <GlobalLayout>{children}</GlobalLayout>
         </Providers>
       </body>
     </html>

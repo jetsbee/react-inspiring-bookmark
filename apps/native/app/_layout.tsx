@@ -1,13 +1,13 @@
-import { StyledLayout } from "app/src/components/Layout";
+import { GlobalLayout } from "app/src/components/GlobalLayout";
 import { Providers } from "app/src/providers";
 import { Slot } from "expo-router";
 
 export default function RootLayout() {
   return (
     <Providers>
-      <StyledLayout>
+      <GlobalLayout>
         <Slot />
-      </StyledLayout>
+      </GlobalLayout>
     </Providers>
   );
 }

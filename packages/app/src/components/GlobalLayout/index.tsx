@@ -13,7 +13,7 @@ const StyledMain = styled(Main, {
   marginLeft: "auto",
 });
 
-export const StyledLayout = ({ children }: { children?: React.ReactNode }) => {
+export const GlobalLayout = ({ children }: { children?: React.ReactNode }) => {
   const safeArea = useSafeArea();
   const StyledMainProps = {
     paddingTop: safeArea.top,
