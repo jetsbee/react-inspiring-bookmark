@@ -37,7 +37,7 @@
     "metro-react-native-babel-preset": "^0.77.0",
     "react-native-web": "^0.19.7",
     "storybook": "7.1.1",
-    "tamagui-loader": "^1.50.2",
+    "tamagui-loader": "^1.50.3",
     "typescript": "^5.0.2"
   }
 }
