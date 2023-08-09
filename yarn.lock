@@ -5538,14 +5538,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/next-theme@npm:^1.50.3":
-  version: 1.50.3
-  resolution: "@tamagui/next-theme@npm:1.50.3"
+"@tamagui/next-theme@npm:^1.51.0":
+  version: 1.51.0
+  resolution: "@tamagui/next-theme@npm:1.51.0"
   dependencies:
-    "@tamagui/use-event": 1.50.3
+    "@tamagui/use-event": 1.51.0
   peerDependencies:
     react: "*"
-  checksum: 071a9d906e859118fce9a644837c732fd74f64ece2cee8d3a21a207d72fda2b431423034c6d1f1db53b695fb064cfd6c526aaab7706b8a572d95e9e050aba608
+  checksum: 5eb397e2b49952332871bacc18f54be78cffa2f97eecb357585362605d5022e64a5b89af47296a53dc8343a447e7d2ac549f93a682d34522a9e2b8337739147a
   languageName: node
   linkType: hard
 
@@ -6109,6 +6109,15 @@ __metadata:
   peerDependencies:
     react: "*"
   checksum: d44e79338cfca9b69e7d8303eda8985c93d31e83f4c6516333c10c4311e0b73e61e86658711c05796daea2ea8b5aab845f75723d0e198adf832046e4db64f8ff
+  languageName: node
+  linkType: hard
+
+"@tamagui/use-event@npm:1.51.0":
+  version: 1.51.0
+  resolution: "@tamagui/use-event@npm:1.51.0"
+  peerDependencies:
+    react: "*"
+  checksum: 3d90f09cfad474b4d6744af0d039709572bb2a950e9116011b3ade02a29c9a6fbac014c8a8f56af9c3252962e08a00cd5ab96280d63aac4555a0ea88e99dcf96
   languageName: node
   linkType: hard
 
@@ -7414,7 +7423,6 @@ __metadata:
     "@tamagui/animations-react-native": ^1.50.3
     "@tamagui/config": ^1.50.3
     "@tamagui/font-inter": ^1.50.3
-    "@tamagui/next-theme": ^1.50.3
     "@tamagui/react-native-media-driver": ^1.50.3
     "@tamagui/shorthands": ^1.50.3
     "@tamagui/themes": ^1.50.3
@@ -10430,6 +10438,15 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 243f961d95d40996f216f2618336dd3c3f49da798e6ccd789a0484fdab0c018a6c9ec9d8e6acd4274e50572682368406effc9409d613c652732cb312f2e34187
+  languageName: node
+  linkType: hard
+
+"expo-image@npm:^1.3.2":
+  version: 1.4.1
+  resolution: "expo-image@npm:1.4.1"
+  peerDependencies:
+    expo: "*"
+  checksum: 8eda22cba8ec12f647532b5562913c33adb2e206a4cea426e2d7325c34ab7b3fcb2d1effbf4e0b5df685dfd156e435d4429873a1ceb966e73885944cb6634005
   languageName: node
   linkType: hard
 
@@ -14163,6 +14180,7 @@ __metadata:
     expo: ^49.0.6
     expo-constants: ~14.4.2
     expo-font: ^11.4.0
+    expo-image: ^1.3.2
     expo-linking: ~5.0.2
     expo-router: 2.0.0
     expo-splash-screen: ~0.20.4
@@ -18776,6 +18794,7 @@ turbo@latest:
   resolution: "web@workspace:apps/web"
   dependencies:
     "@tamagui/next-plugin": ^1.50.3
+    "@tamagui/next-theme": ^1.51.0
     "@types/node": ^20.4.5
     "@types/react": ^18.2.18
     "@types/react-dom": ^18.2.7

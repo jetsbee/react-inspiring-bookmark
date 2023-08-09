@@ -2,6 +2,7 @@
 
 import { Main, styled } from "tamagui";
 import { useSafeArea } from "../../providers/safe-area/use-safe-area";
+import { GlobalHeader } from "../GlobalHeader";
 
 const StyledMain = styled(Main, {
   height: "100%", // for Stack in expo router layout
@@ -21,5 +22,10 @@ export const GlobalLayout = ({ children }: { children?: React.ReactNode }) => {
     paddingBottom: safeArea.bottom,
     paddingLeft: safeArea.left,
   };
-  return <StyledMain {...StyledMainProps}>{children}</StyledMain>;
+  return (
+    <StyledMain {...StyledMainProps}>
+      <GlobalHeader />
+      {children}
+    </StyledMain>
+  );
 };
