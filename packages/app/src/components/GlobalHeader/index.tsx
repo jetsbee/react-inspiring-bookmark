@@ -5,7 +5,7 @@ import {
   StyledH1,
   StyledHeader,
   StyledP,
-} from "./components.styled";
+} from "./GlobalHeader.styled";
 
 export const GlobalHeader = () => {
   return (
