@@ -41,19 +41,25 @@ export const StyledH1 = styled(Paragraph, {
   tag: "h1",
   size: "$10",
   color: "#000",
-  fontSize: Platform.OS === "web" ? 32 : 20,
   fontWeight: "normal",
+  $xxs: {
+    fontSize: 20,
+    get lineHeight() {
+      return headingLineHeightSize(this.fontSize);
+    },
+  },
+  fontSize: 32,
   get lineHeight() {
     return headingLineHeightSize(this.fontSize);
   },
 }); // ref. https://github.com/tamagui/tamagui/issues/1473
 
 export const StyledP = styled(Paragraph, {
+  textDecorationLine: "underline",
+  color: "#000",
+  fontWeight: "500",
   fontSize: 16,
   get lineHeight() {
     return bodyLineHeightSize(this.fontSize);
   },
-  fontWeight: "500",
-  color: "#000",
-  textDecorationLine: "underline",
 });
