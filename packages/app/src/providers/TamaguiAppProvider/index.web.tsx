@@ -10,7 +10,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { TamaguiProvider, createTamagui } from "tamagui";
 
-import { config as Tamagui } from "../../tamagui.config";
+import { config as Tamagui } from "tamaconfig";
 
 const config = createTamagui({
   ...configBase,

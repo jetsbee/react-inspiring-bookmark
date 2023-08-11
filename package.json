@@ -8,9 +8,11 @@
     "dev": "turbo dev",
     "build": "turbo build",
     "clean": "turbo clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore"
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore",
+    "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui && manypkg upgrade tamagui-loader"
   },
   "devDependencies": {
+    "@manypkg/cli": "^0.21.0",
     "prettier": "^3.0.0",
     "turbo": "latest"
   },

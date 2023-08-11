@@ -1,9 +1,8 @@
-import React from "react";
+import { config } from "tamaconfig";
 import {
   TamaguiProvider /* note: design system can use @tamagui/core */,
   TamaguiProviderProps,
 } from "tamagui";
-import { config } from "../../tamagui.config";
 
 export const TamaguiAppProvider = ({
   children,

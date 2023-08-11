@@ -1,7 +1,7 @@
 // don't import from here, that's handled already
 // instead this is just setting types for this folder
 
-import { config } from "app/src/tamagui.config";
+import { config } from "tamaconfig";
 
 type Conf = typeof config;
 
