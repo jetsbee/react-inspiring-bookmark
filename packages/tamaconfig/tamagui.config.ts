@@ -3,7 +3,7 @@ import { config as baseConfig } from "@tamagui/config";
 import { createMedia } from "@tamagui/react-native-media-driver";
 import { shorthands } from "@tamagui/shorthands";
 import { themes, tokens } from "@tamagui/themes";
-import { createTamagui } from "tamagui";
+import { CreateTamaguiProps, createTamagui } from "tamagui";
 
 const animations = createAnimations({
   bouncy: {
@@ -25,7 +25,7 @@ const animations = createAnimations({
   },
 });
 
-export const config: any = createTamagui({
+export const configBase: CreateTamaguiProps = {
   ...baseConfig,
   defaultFont: "body",
   animations,
@@ -52,5 +52,7 @@ export const config: any = createTamagui({
     hoverNone: { hover: "none" },
     pointerCoarse: { pointer: "coarse" },
   }),
-});
+};
+
+export const config = createTamagui(configBase);
 // ref. https://github.com/tamagui/tamagui/blob/6bc2a36b5f325d553fec33fd95f7f7303213ba37/starters/next-expo-solito/packages/ui/src/tamagui.config.ts

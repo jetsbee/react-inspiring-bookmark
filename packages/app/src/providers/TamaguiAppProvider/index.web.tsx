@@ -3,14 +3,13 @@
 import "@tamagui/core/reset.css";
 import "@tamagui/polyfill-dev";
 
-import { config as configBase } from "@tamagui/config";
 import { NextThemeProvider, useRootTheme } from "@tamagui/next-theme";
 import { useServerInsertedHTML } from "next/navigation";
 import React from "react";
 import { StyleSheet } from "react-native";
 import { TamaguiProvider, createTamagui } from "tamagui";
 
-import { config as Tamagui } from "tamaconfig";
+import { config as Tamagui, configBase } from "tamaconfig";
 
 const config = createTamagui({
   ...configBase,
