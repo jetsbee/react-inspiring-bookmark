@@ -1,5 +1,6 @@
 // Don't forget to specify your TAMAGUI_TARGET here or ideally in the command to run / .env files
-process.env.TAMAGUI_TARGET = "native";
+process.env.TAMAGUI_TARGET = process.env.TAMAGUI_TARGET || "native";
+// ref. https://github.com/tamagui/tamagui/issues/1210#issuecomment-1658757754
 
 module.exports = function (api) {
   api.cache(true);

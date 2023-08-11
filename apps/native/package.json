@@ -7,7 +7,8 @@
     "start-web": "TAMAGUI_TARGET=web expo start -c",
     "android": "TAMAGUI_TARGET=native expo run:android",
     "ios": "TAMAGUI_TARGET=native expo run:ios",
-    "web": "TAMAGUI_TARGET=web expo start --web",
+    "// react-native-web doesn't work with solito": "https://github.com/nandorojo/solito/issues/322#issuecomment-1414454458",
+    "web": "TAMAGUI_TARGET=web expo start --web -c",
     "eject": "expo eject",
     "dev": "yarn start-native"
   },
