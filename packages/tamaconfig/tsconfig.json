@@ -4,6 +4,7 @@
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "strict": true,
-    "jsx": "preserve"
+    "declaration": false,
+    "declarationMap": false
   }
 }

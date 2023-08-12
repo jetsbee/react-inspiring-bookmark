@@ -3,7 +3,7 @@ import { config as baseConfig } from "@tamagui/config";
 import { createMedia } from "@tamagui/react-native-media-driver";
 import { shorthands } from "@tamagui/shorthands";
 import { themes, tokens } from "@tamagui/themes";
-import { CreateTamaguiProps, createTamagui } from "tamagui";
+import { createTamagui } from "tamagui";
 
 const animations = createAnimations({
   bouncy: {
@@ -25,7 +25,7 @@ const animations = createAnimations({
   },
 });
 
-export const configBase: CreateTamaguiProps = {
+export const configBase = {
   ...baseConfig,
   defaultFont: "body",
   animations,
