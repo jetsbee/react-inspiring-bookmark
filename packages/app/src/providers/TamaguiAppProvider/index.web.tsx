@@ -7,9 +7,9 @@ import { NextThemeProvider, useRootTheme } from "@tamagui/next-theme";
 import { useServerInsertedHTML } from "next/navigation";
 import React from "react";
 import { StyleSheet } from "react-native";
+import { configBase } from "tamaconfig";
 import { TamaguiProvider, createTamagui } from "tamagui";
-
-import { config as Tamagui, configBase } from "tamaconfig";
+import Tamagui from "../../tamagui.config";
 
 const config = createTamagui({
   ...configBase,

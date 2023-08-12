@@ -3,7 +3,6 @@ import {
   DefaultTheme,
   ThemeProvider as ThemeProviderOG,
 } from "@react-navigation/native";
-import { useFonts } from "expo-font";
 import { useColorScheme } from "react-native";
 
 export const ThemeProvider = ({
@@ -11,18 +10,11 @@ export const ThemeProvider = ({
 }: {
   children: React.ReactElement;
 }) => {
-  const [loaded] = useFonts({
-    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
-    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
-  });
   const scheme = useColorScheme();
-
-  if (!loaded) {
-    return null;
-  }
   return (
     <ThemeProviderOG value={scheme === "dark" ? DarkTheme : DefaultTheme}>
       {children}
     </ThemeProviderOG>
   );
 };
+// ref. https://github.com/tamagui/tamagui/blob/99807210ac9257a8d730a3982f890504c07a200e/starters/next-expo-solito/apps/expo/app/_layout.tsx
