@@ -12,6 +12,7 @@ const StyledMain = styled(Main, {
   marginRight: "auto",
   marginBottom: 0,
   marginLeft: "auto",
+  backgroundColor: "$background",
 });
 
 export const GlobalLayout = ({ children }: { children?: React.ReactNode }) => {

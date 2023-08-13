@@ -1,12 +1,17 @@
 import { GlobalLayout } from "app/src/components/GlobalLayout";
 import { Providers } from "app/src/providers";
-import { Slot } from "expo-router";
+import { Stack } from "expo-router";
 
 export default function RootLayout() {
   return (
     <Providers>
       <GlobalLayout>
-        <Slot />
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            contentStyle: { backgroundColor: "transparent" },
+          }}
+        />
       </GlobalLayout>
     </Providers>
   );
