@@ -40,7 +40,6 @@ export const StyledH1 = styled(Paragraph, {
   name: "H1",
   tag: "h1",
   size: "$10",
-  color: "#000",
   fontWeight: "normal",
   $xxs: {
     fontSize: 20,
@@ -56,7 +55,6 @@ export const StyledH1 = styled(Paragraph, {
 
 export const StyledP = styled(Paragraph, {
   textDecorationLine: "underline",
-  color: "#000",
   fontWeight: "500",
   fontSize: 16,
   get lineHeight() {
