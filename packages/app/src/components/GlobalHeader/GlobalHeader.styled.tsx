@@ -8,6 +8,7 @@ import {
   bodyLineHeightSize,
   headingLineHeightSize,
 } from "../../utils/LineBoxHeight";
+import { StyledBaseH1 } from "../StyledBase";
 
 export const StyledHeader = styled(Header, {
   flexDirection: "row",
@@ -33,14 +34,7 @@ export const SizedLogoImage = (
   );
 };
 
-export const StyledH1 = styled(Paragraph, {
-  accessibilityRole: "header",
-  // fontFamily: "$heading",
-  margin: 0,
-  name: "H1",
-  tag: "h1",
-  size: "$10",
-  fontWeight: "normal",
+export const StyledH1 = styled(StyledBaseH1, {
   $xxs: {
     fontSize: 20,
     get lineHeight() {
