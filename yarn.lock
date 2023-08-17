@@ -17600,6 +17600,7 @@ __metadata:
     tamaconfig: "workspace:*"
     tamagui-loader: ^1.52.2
     typescript: ^5.0.2
+    web: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -19166,7 +19167,7 @@ turbo@latest:
   languageName: node
   linkType: hard
 
-"web@workspace:apps/web":
+"web@workspace:*, web@workspace:apps/web":
   version: 0.0.0-use.local
   resolution: "web@workspace:apps/web"
   dependencies:
