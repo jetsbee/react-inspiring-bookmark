@@ -1,5 +1,6 @@
 import { createAnimations } from "@tamagui/animations-react-native";
 import { config as baseConfig } from "@tamagui/config";
+import { createInterFont } from "@tamagui/font-inter";
 import { createMedia } from "@tamagui/react-native-media-driver";
 import { shorthands } from "@tamagui/shorthands";
 import { themes, tokens } from "@tamagui/themes";
@@ -42,7 +43,40 @@ export const configBase = {
   shouldAddPrefersColorThemes: true,
   themeClassNameOnRoot: true,
   shorthands,
-  fonts: baseConfig.fonts,
+  fonts: {
+    // Something wrong with configuration consistency.
+    // Appearance depends on the order of fonts key (i.e. heading, body || body, heading)
+
+    /* Configuration might be enabled in the future */
+    /*
+    ...baseConfig.fonts,
+    */
+    body: {
+      ...baseConfig.fonts.body,
+      face: {
+        ...baseConfig.fonts.body.face,
+        ...createInterFont({
+          face: {
+            300: { normal: "InterLight" },
+          },
+        }).face,
+      },
+    }, // {fontWeight: 300, fontFamily: "$heading"} also work with above config. (Unexpected behavior)
+    heading: {
+      ...baseConfig.fonts.heading,
+      face: {
+        ...baseConfig.fonts.heading.face,
+        /* Configuration might be enabled in the future */
+        /*
+        ...createInterFont({
+          face: {
+            300: { normal: "InterLight" },
+          },
+        }).face,
+        */
+      },
+    },
+  },
   themes: {
     ...themes,
     light: {
