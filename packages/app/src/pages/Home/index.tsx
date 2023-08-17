@@ -1,15 +1,7 @@
-"use client";
-
-import { Paragraph, styled } from "tamagui";
-
-const StyledP = styled(Paragraph, {
-  textAlign: "center",
-  color: "blue",
-  backgroundColor: "aqua",
-});
+import { NYTimesBookList } from "../../components/NYTimesBookList";
 
 const HomeScreen = () => {
-  return <StyledP>Home</StyledP>;
+  return <NYTimesBookList />;
 };
 
 export default HomeScreen;

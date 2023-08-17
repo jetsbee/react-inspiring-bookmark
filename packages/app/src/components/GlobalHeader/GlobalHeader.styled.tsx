@@ -1,3 +1,5 @@
+"use client";
+
 import { Image } from "expo-image";
 import { JSX, RefAttributes } from "react";
 import { Platform } from "react-native";

@@ -1,12 +1,4 @@
-"use client";
-
-import { Paragraph, styled } from "tamagui";
-
-const StyledP = styled(Paragraph, {
-  textAlign: "center",
-  color: "blue",
-  backgroundColor: "green",
-});
+import { StyledP } from "./Bookmarks.styled";
 
 const BookmarksScreen = () => {
   return <StyledP>BookmarksScreen</StyledP>;
