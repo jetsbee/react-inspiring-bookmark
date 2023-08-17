@@ -11,7 +11,7 @@ export const TamaguiAppProvider = ({
   ...rest
 }: Omit<TamaguiProviderProps, "config">) => {
   const [loaded] = useFonts({
-    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    Inter: require("@tamagui/font-inter/otf/Inter-Regular.otf"),
     InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
     InterLight: require("@tamagui/font-inter/otf/Inter-Light.otf"),
     InterMedium: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
