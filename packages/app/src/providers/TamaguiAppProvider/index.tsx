@@ -14,6 +14,8 @@ export const TamaguiAppProvider = ({
     Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
     InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
     InterLight: require("@tamagui/font-inter/otf/Inter-Light.otf"),
+    InterMedium: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterSemiBold: require("@tamagui/font-inter/otf/Inter-SemiBold.otf"),
   });
   const scheme = useColorScheme();
 

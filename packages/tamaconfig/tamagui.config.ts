@@ -1,6 +1,5 @@
 import { createAnimations } from "@tamagui/animations-react-native";
 import { config as baseConfig } from "@tamagui/config";
-import { createInterFont } from "@tamagui/font-inter";
 import { createMedia } from "@tamagui/react-native-media-driver";
 import { shorthands } from "@tamagui/shorthands";
 import { themes, tokens } from "@tamagui/themes";
@@ -55,24 +54,20 @@ export const configBase = {
       ...baseConfig.fonts.body,
       face: {
         ...baseConfig.fonts.body.face,
-        ...createInterFont({
-          face: {
-            300: { normal: "InterLight" },
-          },
-        }).face,
+        300: { normal: "InterLight" },
+        500: { normal: "InterMedium" },
+        600: { normal: "InterSemiBold" },
       },
-    }, // {fontWeight: 300, fontFamily: "$heading"} also work with above config. (Unexpected behavior)
+    }, // {fontWeight: 300|500|600, fontFamily: "$heading"} also work with above config. (Unexpected behavior)
     heading: {
       ...baseConfig.fonts.heading,
       face: {
         ...baseConfig.fonts.heading.face,
         /* Configuration might be enabled in the future */
         /*
-        ...createInterFont({
-          face: {
-            300: { normal: "InterLight" },
-          },
-        }).face,
+        300: { normal: "InterLight" },
+        500: { normal: "InterMedium" },
+        600: { normal: "InterSemiBold" },
         */
       },
     },
