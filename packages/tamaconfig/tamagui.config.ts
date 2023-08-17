@@ -3,7 +3,7 @@ import { config as baseConfig } from "@tamagui/config";
 import { createMedia } from "@tamagui/react-native-media-driver";
 import { shorthands } from "@tamagui/shorthands";
 import { themes, tokens } from "@tamagui/themes";
-import { createTamagui, createTheme } from "tamagui";
+import { createTamagui } from "tamagui";
 
 const animations = createAnimations({
   bouncy: {
@@ -23,16 +23,6 @@ const animations = createAnimations({
     mass: 1.2,
     stiffness: 250,
   },
-});
-
-const light = createTheme({
-  background: "#f8f8f8", // default
-  color: "hsl(0, 0%, 9.0%)", // default
-});
-
-const dark = createTheme({
-  background: "#151515", // default
-  color: "#fff", // default
 });
 
 export const configBase = {
@@ -76,11 +66,13 @@ export const configBase = {
     ...themes,
     light: {
       ...themes.light,
-      ...light,
+      background: "#f8f8f8", // default
+      color: "hsl(0, 0%, 9.0%)", // default
     },
     dark: {
       ...themes.dark,
-      ...dark,
+      background: "#151515", // default
+      color: "#fff", // default
     },
   },
   tokens,
