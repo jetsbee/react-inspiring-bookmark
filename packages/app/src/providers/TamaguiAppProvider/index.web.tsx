@@ -1,6 +1,10 @@
 "use client";
 
 import "@tamagui/core/reset.css";
+import "@tamagui/font-inter/css/300.css";
+import "@tamagui/font-inter/css/400.css";
+import "@tamagui/font-inter/css/500.css";
+import "@tamagui/font-inter/css/600.css";
 import "@tamagui/polyfill-dev";
 
 import { NextThemeProvider, useRootTheme } from "@tamagui/next-theme";
