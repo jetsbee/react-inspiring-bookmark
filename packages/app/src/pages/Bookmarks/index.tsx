@@ -1,7 +1,5 @@
 import { StyledP } from "./Bookmarks.styled";
 
-const BookmarksScreen = () => {
+export const BookmarksScreen = () => {
   return <StyledP>BookmarksScreen</StyledP>;
 };
-
-export default BookmarksScreen;

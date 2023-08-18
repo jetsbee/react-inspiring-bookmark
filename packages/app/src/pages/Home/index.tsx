@@ -1,7 +1,5 @@
 import { NYTimesBookList } from "../../components/NYTimesBookList";
 
-const HomeScreen = () => {
+export const HomeScreen = () => {
   return <NYTimesBookList />;
 };
-
-export default HomeScreen;
