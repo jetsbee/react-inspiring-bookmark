@@ -7,18 +7,19 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "kill-zombies": "sh ./kill_next-router-worker_zombies.sh"
+    "kill-zombies": "sh ./kill_next-router-worker_zombies.sh",
+    "next": "yarn dev"
   },
   "dependencies": {
     "app": "workspace:*",
-    "next": "^13.4.12",
+    "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native-web": "^0.19.7",
     "tamaconfig": "workspace:*"
   },
   "devDependencies": {
-    "@tamagui/next-plugin": "^1.52.2",
+    "@tamagui/next-plugin": "^1.53.0",
     "@types/node": "^20.4.5",
     "@types/react": "^18.2.18",
     "@types/react-dom": "^18.2.7",

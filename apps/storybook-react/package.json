@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "TAMAGUI_TARGET=web yarn storybook",
-    "build": "TAMAGUI_TARGET=web yarn build-storybook",
+    "dev": "yarn storybook",
+    "build": "storybook build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "TAMAGUI_TARGET=web storybook dev -p 6006",
+    "build-storybook": "TAMAGUI_TARGET=web storybook build"
   },
   "dependencies": {
     "app": "workspace:*",
@@ -18,13 +18,13 @@
     "web": "workspace:*"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "7.1.1",
-    "@storybook/addon-interactions": "7.1.1",
-    "@storybook/addon-links": "7.1.1",
+    "@storybook/addon-essentials": "7.3.2",
+    "@storybook/addon-interactions": "7.3.2",
+    "@storybook/addon-links": "7.3.2",
     "@storybook/addon-react-native-web": "^0.0.21",
-    "@storybook/blocks": "7.1.1",
-    "@storybook/nextjs": "7.1.1",
-    "@storybook/react": "7.1.1",
+    "@storybook/blocks": "7.3.2",
+    "@storybook/nextjs": "7.3.2",
+    "@storybook/react": "7.3.2",
     "@storybook/testing-library": "^0.2.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
@@ -38,8 +38,8 @@
     "eslint-plugin-storybook": "^0.6.13",
     "metro-react-native-babel-preset": "^0.77.0",
     "react-native-web": "^0.19.7",
-    "storybook": "7.1.1",
-    "tamagui-loader": "^1.52.2",
+    "storybook": "7.3.2",
+    "tamagui-loader": "^1.53.0",
     "typescript": "^5.0.2"
   }
 }

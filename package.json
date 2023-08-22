@@ -5,14 +5,22 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
+    "dev": "dotenv -e .env.local -- turbo dev",
+    "next": "dotenv -e .env.local -- turbo next",
+    "ios": "dotenv -e .env.local -- turbo ios",
+    "android": "dotenv -e .env.local -- turbo android",
+    "storybook": "yarn kill:storybook && dotenv -e .env.local -- turbo storybook",
+    "kill:zombies": "yarn kill:storybook && yarn workspace web kill-zombies",
+    "kill:storybook": "yarn kill-port 6006",
+    "build": "dotenv -e .env.local -- turbo build",
     "clean": "turbo clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore",
     "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui && manypkg upgrade tamagui-loader"
   },
   "devDependencies": {
     "@manypkg/cli": "^0.21.0",
+    "dotenv-cli": "^7.3.0",
+    "kill-port": "^2.0.1",
     "prettier": "^3.0.0",
     "turbo": "latest"
   },

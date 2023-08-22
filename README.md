@@ -1,6 +1,19 @@
-# Example of react-native-monorepo
+# Inspiring Bookmark (Monorepo, Next.js, Expo)
 
 - Based on https://github.com/vercel/turbo/tree/5ff0ab2720708924ea3fcb50798f388a25c02fae/examples/with-react-native-web
+
+## Environment
+- Node.js
+- Yarn
+- Bash-like shell
+
+## Set ".env.local" file
+```
+# Create ".env.local" file
+cp .env.example .env.local
+
+# Add secret values into ".env.local" file!
+```
 
 ## Scripts to run in dev
 
