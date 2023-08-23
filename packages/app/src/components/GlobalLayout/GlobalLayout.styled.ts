@@ -3,7 +3,7 @@
 import { Main, styled } from "tamagui";
 
 export const StyledMain = styled(Main, {
-  height: "100%", // for Stack in expo router layout
+  flex: 1,
   maxWidth: 768,
   width: "100%",
   marginTop: 0,

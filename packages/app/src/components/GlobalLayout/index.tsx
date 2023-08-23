@@ -1,6 +1,10 @@
+"use client";
+
+import { ScrollView } from "tamagui";
 import { useSafeArea } from "../../providers/safe-area/use-safe-area";
 import { GlobalHeader } from "../GlobalHeader";
 import { StyledMain } from "./GlobalLayout.styled";
+import { useScrollView } from "./hooks/useScrollView";
 
 export const GlobalLayout = ({ children }: { children?: React.ReactNode }) => {
   const safeArea = useSafeArea();
@@ -10,10 +14,19 @@ export const GlobalLayout = ({ children }: { children?: React.ReactNode }) => {
     paddingBottom: safeArea.bottom,
     paddingLeft: safeArea.left,
   };
+
+  const { onContentSizeChange, scrollEnabled } = useScrollView();
+  const scrollViewProps = {
+    onContentSizeChange,
+    scrollEnabled,
+  };
+
   return (
     <StyledMain {...StyledMainProps}>
-      <GlobalHeader />
-      {children}
+      <ScrollView {...scrollViewProps}>
+        <GlobalHeader />
+        {children}
+      </ScrollView>
     </StyledMain>
   );
 };
