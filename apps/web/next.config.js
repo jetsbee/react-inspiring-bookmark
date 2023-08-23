@@ -9,6 +9,9 @@ const { join } = require("path");
 module.exports = function (name, { defaultConfig }) {
   let config = {
     ...defaultConfig,
+    experimental: {
+      logging: "verbose",
+    }, // ref. https://github.com/vercel/next.js/releases/tag/v13.4.13-canary.5
     webpack: (config) => {
       config.resolve.alias = {
         ...(config.resolve.alias || {}),
