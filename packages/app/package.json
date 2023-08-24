@@ -17,11 +17,13 @@
   },
   "dependencies": {
     "@tamagui/next-theme": "^1.53.0",
+    "@tanstack/react-query": "^4.33.0",
     "react": "^18.2.0",
     "react-native": "^0.72.3",
     "solito": "^4.0.1",
     "tamaconfig": "workspace:*",
-    "tamagui": "^1.53.0"
+    "tamagui": "^1.53.0",
+    "zustand": "^4.4.1"
   },
   "sideEffects": false
 }

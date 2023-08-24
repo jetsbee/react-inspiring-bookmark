@@ -1,0 +1,4 @@
+const API_ENDPOINT =
+  process.env.NEXT_PUBLIC_API_ENDPOINT || process.env.STORYBOOK_API_ENDPOINT;
+
+export { API_ENDPOINT };

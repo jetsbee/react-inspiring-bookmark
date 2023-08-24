@@ -1,5 +1,10 @@
 import { NYTimesBookList } from "../../components/NYTimesBookList";
+import { HydrateBookList } from "../../utils/hydrators";
 
 export const HomeScreen = () => {
-  return <NYTimesBookList />;
+  return (
+    <HydrateBookList>
+      <NYTimesBookList />
+    </HydrateBookList>
+  );
 };
