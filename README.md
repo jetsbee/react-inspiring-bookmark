@@ -21,6 +21,12 @@ cp .env.example .env.local
 # for install deps
 yarn install
 
+# for web and BFF
+yarn next
+
+# for storybook
+yarn storybook
+
 # for iOS
 # First, set up the iOS simulator (MacOS Only) ref. https://docs.expo.dev/workflow/ios-simulator/
 yarn ios
@@ -28,12 +34,6 @@ yarn ios
 # for android
 # First, set up the Android Emulator ref. https://docs.expo.dev/workflow/android-studio-emulator/
 yarn android
-
-# for web
-yarn next
-
-# for storybook
-yarn storybook
 ```
 
 ## Temporary fix if android script is not working
