@@ -23,17 +23,17 @@ yarn install
 
 # for iOS
 # First, set up the iOS simulator (MacOS Only) ref. https://docs.expo.dev/workflow/ios-simulator/
-yarn workspace native ios
+yarn ios
 
 # for android
 # First, set up the Android Emulator ref. https://docs.expo.dev/workflow/android-studio-emulator/
-yarn workspace native android
+yarn android
 
 # for web
-yarn workspace web dev
+yarn next
 
 # for storybook
-yarn workspace storybook-react dev
+yarn storybook
 ```
 
 ## Temporary fix if android script is not working
@@ -53,6 +53,8 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.6.2-all.zip
 - ref 3. https://github.com/vercel/next.js/issues/45508#issuecomment-1560568292
 
 ```sh
-# Kill the zombie processes
+# Kill the next.js zombie processes
 yarn workspace web kill-zombies
+# or
+yarn kill:zombies # clear next.js and storybook processes
 ```
