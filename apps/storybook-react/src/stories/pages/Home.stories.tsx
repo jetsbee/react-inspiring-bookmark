@@ -1,8 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { GlobalLayout } from "app/src/components/GlobalLayout";
-import { HomeScreen } from "app/src/pages/Home";
+import { NYTimesBookList } from "app/src/components/NYTimesBookList";
 import { Providers } from "app/src/providers";
+
+const HomeScreen = () => {
+  return <NYTimesBookList />;
+};
 
 const meta: Meta<typeof HomeScreen> = {
   title: "HomeScreen",
