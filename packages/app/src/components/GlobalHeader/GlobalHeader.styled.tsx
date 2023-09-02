@@ -15,7 +15,12 @@ import { StyledBaseH1 } from "../StyledBase";
 export const StyledHeader = styled(Header, {
   flexDirection: "row",
   justifyContent: "space-between",
-  gap: 16,
+  $xxs: {
+    marginTop: 14,
+    marginBottom: 22,
+  },
+  marginTop: 24,
+  marginBottom: 32,
 });
 
 export const ColDiv = styled(Stack, {

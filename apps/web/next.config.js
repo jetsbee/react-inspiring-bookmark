@@ -12,6 +12,14 @@ module.exports = function (name, { defaultConfig }) {
     experimental: {
       logging: "verbose",
     }, // ref. https://github.com/vercel/next.js/releases/tag/v13.4.13-canary.5
+    images: {
+      remotePatterns: [
+        {
+          protocol: "http",
+          hostname: "books.google.com",
+        },
+      ], // ref. https://nextjs.org/docs/app/api-reference/components/image#remotepatterns
+    },
     webpack: (config) => {
       config.resolve.alias = {
         ...(config.resolve.alias || {}),
