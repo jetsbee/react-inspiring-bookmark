@@ -28,5 +28,5 @@ export const BookImage = (props: {
   alt: string;
   onError: () => void;
 }) => {
-  return <SolitoImage fill {...props} />;
+  return <SolitoImage fill sizes="108px" {...props} />;
 };
